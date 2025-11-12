@@ -8,3 +8,10 @@ class Email:
 
     def mark_as_read(self):
         self.read = True
+class User:
+    def __init__(self, name):
+        self.name = name
+        self.inbox = []
+
+    def send_email(self, receiver, subject, body):
+        email = Email(sender=self, receiver=receiver, subject=subject, body=body)
